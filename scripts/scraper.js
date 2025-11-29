@@ -1,4 +1,4 @@
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const fetch = require("node-fetch");
 const cheerio = require("cheerio");
 const fs = require("fs");
 const path = require("path");
@@ -7,7 +7,6 @@ async function scrape() {
   try {
     const url = "https://www.football-coefficient.eu/";
 
-    // ⚡ Cloudflare engel olmasın diye User-Agent ekliyoruz
     const response = await fetch(url, {
       headers: {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
