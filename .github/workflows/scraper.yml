@@ -7,18 +7,14 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
 
+    container:
+      image: node:16-alpine    # TEMİZ NODE – undici preload YOK
+
     steps:
       - uses: actions/checkout@v3
-
-      - name: Node 16 kur
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
 
       - name: Bağımlılıkları yükle
         run: npm install axios cheerio
 
       - name: Scraper'ı çalıştır
-        env:
-          NODE_OPTIONS: "--no-experimental-fetch --no-warnings"
-        run: node --no-experimental-fetch --no-warnings scripts/scraper.js
+        run: node scripts/scraper.js
