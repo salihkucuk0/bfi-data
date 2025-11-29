@@ -6,6 +6,7 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
 
@@ -14,10 +15,10 @@ jobs:
         with:
           node-version: 18
 
-      - name: Scraper bağımlılıkları
-        run: npm install cheerio axios
+      - name: Bağımlılıkları yükle
+        run: npm install axios cheerio
 
       - name: Scraper'ı çalıştır
         env:
-          NODE_NO_UNDICI: 1
+          NODE_OPTIONS: "--no-experimental-fetch"
         run: node scripts/scraper.js
