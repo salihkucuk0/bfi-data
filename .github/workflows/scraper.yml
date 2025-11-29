@@ -10,15 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Node kur
+      - name: Node 16 kur
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 16
 
       - name: Bağımlılıkları yükle
         run: npm install axios cheerio
 
       - name: Scraper'ı çalıştır
-        env:
-          NODE_OPTIONS: "--no-experimental-fetch"
         run: node scripts/scraper.js
