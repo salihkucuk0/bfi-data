@@ -1,14 +1,3 @@
-// Undici'nin global fetch override etmesini engelle
-globalThis.ReadableStream = undefined;
-globalThis.WritableStream = undefined;
-globalThis.TransformStream = undefined;
-delete global.Blob;
-delete global.File;
-delete global.Headers;
-delete global.Request;
-delete global.Response;
-
-
 const https = require("https");
 const cheerio = require("cheerio");
 const fs = require("fs");
