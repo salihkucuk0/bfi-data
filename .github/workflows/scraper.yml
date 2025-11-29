@@ -18,10 +18,7 @@ jobs:
       - name: Bağımlılıkları yükle
         run: npm install axios cheerio
 
-      - name: Scraper'ı çalıştır
-        env:
-          NODE_NO_FETCH: "1"
-          NODE_OPTIONS: "--no-experimental-fetch"
-          DISABLE_UNDICI: "1"
-          NO_UNDICI: "1"
-        run: node scripts/scraper.js
+     - name: Scraper'ı çalıştır
+  env:
+    NODE_OPTIONS: "--no-experimental-fetch --no-warnings"
+  run: node --no-experimental-fetch --no-warnings scripts/scraper.js
