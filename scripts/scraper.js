@@ -1,7 +1,7 @@
 // Undici'nin global fetch override etmesini engelle
-delete global.ReadableStream;
-delete global.WritableStream;
-delete global.TransformStream;
+globalThis.ReadableStream = undefined;
+globalThis.WritableStream = undefined;
+globalThis.TransformStream = undefined;
 delete global.Blob;
 delete global.File;
 delete global.Headers;
