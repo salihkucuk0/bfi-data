@@ -23,7 +23,7 @@ jobs:
           node-version: 18
 
       - name: Scraper bağımlılıkları
-        run: npm install cheerio node-fetch@2
+        run: npm install cheerio
 
 
       - name: Scraper'ı çalıştır
