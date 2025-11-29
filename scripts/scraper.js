@@ -1,6 +1,10 @@
 globalThis.File = undefined;
 globalThis.Blob = undefined;
 globalThis.ReadableStream = undefined;
+globalThis.WritableStream = undefined;
+globalThis.TransformStream = undefined;
+globalThis.DOMException = undefined;
+
 
 const https = require("https");
 const cheerio = require("cheerio");
