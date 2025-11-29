@@ -8,10 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: node:16-alpine    # TEMİZ NODE – undici preload YOK
+      image: node:16
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Repo çek
+        uses: actions/checkout@v3
 
       - name: Bağımlılıkları yükle
         run: npm install axios cheerio
